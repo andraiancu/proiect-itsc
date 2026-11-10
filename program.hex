@@ -1,0 +1,40 @@
+0C05
+0E03
+1000
+4200
+1400
+4600
+080A
+060A
+1800
+0C01
+1C00
+1200
+7000
+200F
+300C
+3412
+6C00
+3011
+0E07
+3800
+/* 0: MOV X,#5        X = 5
+ 1: MOV Y,#3        Y = 3
+ 2: MOV A,X         A = 5
+ 3: ADD Y           A = 5+3 = 8
+ 4: MOV X,A         X = 8
+ 5: SUB Y           A = 8-3 = 5
+ 6: STORE X,10      mem[10] = 8
+ 7: LOAD Y,10       Y = mem[10] = 8
+ 8: PUSH X          pune 8 pe stiva
+ 9: MOV X,#1        X = 1
+10: POP X           X = 8 (scos de pe stiva)
+11: MOV A,Y         A = 8
+12: DEC             A = A-1          <- bucla
+13: BRZ 15          daca A=0, sari la 15
+14: BRA 12          altfel, inapoi la 12
+15: JMP 18          apeleaza subrutina de la 18 (pune 16 pe stiva)
+16: INC             A = A+1 (aici ne intoarcem din subrutina)
+17: BRA 17          "oprire": se invarte pe loc
+18: MOV Y,#7        subrutina: Y = 7
+19: RET             intoarce-te la 16*/
